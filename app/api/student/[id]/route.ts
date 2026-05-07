@@ -6,16 +6,19 @@ const data: Record<string, object> = {
 };
 
 export async function GET(
-  _: Request,
-  { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params;
+
   const student = data[params.id];
 
-  if (!student)
+  if (!student) {
     return NextResponse.json(
       { error: "Not found" },
       { status: 404 }
     );
+  }
 
   return NextResponse.json(student);
 }
