@@ -11,6 +11,15 @@ export default function Home() {
       <h1>Lab 8 — Vercel Deployment</h1>
 
       <p>Student: {name}</p>
+      <h2>Completed Labs</h2>
+
+      <ul style={{ listStyle: "none" }}>
+        <li>Docker</li>
+        <li>LocalStack</li>
+        <li>Terraform</li>
+        <li>Vercel</li>
+      </ul>
+      <p>Preview Deployment Branch</p>
     </main>
   );
 }
